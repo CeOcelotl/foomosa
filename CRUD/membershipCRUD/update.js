@@ -15,7 +15,7 @@ router.post("/commentStar", function (req, res) {
     return res.status(400).send("收到無效資料");
   }
 
-  var sql = `UPDATE comment SET comment_star = ? WHERE user_id = ? AND shop_id = ?`;
+  var sql = `UPDATE comment SET comment_star = ?, created_at = now() WHERE user_id = ? AND shop_id = ?`;
 
   config.query(sql, [comment_star, userId, shopId], function (err, result) {
     if (err) {

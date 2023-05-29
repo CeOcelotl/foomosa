@@ -68,6 +68,7 @@ document.querySelectorAll('.comment-star-input').forEach(function(input) {
           success: function(response) {
             setTimeout(function() {
                 alert("星星評論更新成功!");
+                window.location.reload(); // 重新載入頁面以顯示更新後的評論
                 // console.log(response);
               }, 700);
           },
